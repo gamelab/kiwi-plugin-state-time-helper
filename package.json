@@ -1,6 +1,6 @@
 {
 	"name": "state-time-helper",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Add useful time managers to Kiwi.State.",
 	"author": "Benjamin D. Richards for GameLab",
 	"logo": "xx",

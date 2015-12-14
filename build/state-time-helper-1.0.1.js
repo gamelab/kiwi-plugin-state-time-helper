@@ -1,103 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>src/state-time-helper-1.0.0.js - state-time-helper</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
-    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
-    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
-    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
-    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
-</head>
-<body class="yui3-skin-sam">
-
-<div id="doc">
-    <div id="hd" class="yui3-g header">
-        <div class="yui3-u-3-4">
-            
-                <h1><img src="../assets/css/logo.png" title="state-time-helper"></h1>
-            
-        </div>
-        <div class="yui3-u-1-4 version">
-            <em>API Docs for: 1.0.0</em>
-        </div>
-    </div>
-    <div id="bd" class="yui3-g">
-
-        <div class="yui3-u-1-4">
-            <div id="docs-sidebar" class="sidebar apidocs">
-                <div id="api-list">
-    <h2 class="off-left">APIs</h2>
-    <div id="api-tabview" class="tabview">
-        <ul class="tabs">
-            <li><a href="#api-classes">Classes</a></li>
-            <li><a href="#api-modules">Modules</a></li>
-        </ul>
-
-        <div id="api-tabview-filter">
-            <input type="search" id="api-filter" placeholder="Type to filter APIs">
-        </div>
-
-        <div id="api-tabview-panel">
-            <ul id="api-classes" class="apis classes">
-            
-                <li><a href="../classes/Kiwi.Plugins.StateTimeHelper.html">Kiwi.Plugins.StateTimeHelper</a></li>
-            
-                <li><a href="../classes/Kiwi.Plugins.StateTimeHelper.Component.html">Kiwi.Plugins.StateTimeHelper.Component</a></li>
-            
-            </ul>
-
-            <ul id="api-modules" class="apis modules">
-            
-                <li><a href="../modules/Kiwi.html">Kiwi</a></li>
-            
-                <li><a href="../modules/Plugins.html">Plugins</a></li>
-            
-            </ul>
-        </div>
-    </div>
-</div>
-
-            </div>
-        </div>
-        <div class="yui3-u-3-4">
-                <div id="api-options">
-        Show:
-        <label for="api-show-inherited">
-            <input type="checkbox" id="api-show-inherited" checked>
-            Inherited
-        </label>
-
-        <label for="api-show-protected">
-            <input type="checkbox" id="api-show-protected">
-            Protected
-        </label>
-
-        <label for="api-show-private">
-            <input type="checkbox" id="api-show-private">
-            Private
-        </label>
-        <label for="api-show-deprecated">
-            <input type="checkbox" id="api-show-deprecated">
-            Deprecated
-        </label>
-
-    </div>
-
-
-            <div class="apidocs">
-                <div id="docs-main">
-                    <div class="content">
-                        <h1 class="file-heading">File: src/state-time-helper-1.0.0.js</h1>
-
-<div class="file">
-    <pre class="code prettyprint linenums">
 /**
 * State Time Helper
 *
-* This helper adds a pair of linked managers to a &#x60;State&#x60;.
-* These helpers are &#x60;clocks&#x60; and &#x60;tween&#x60;.
-* You may access the helper to create a &#x60;Clock&#x60;/&#x60;TweenManager&#x60; pair.
+* This helper adds a pair of linked managers to a `State`.
+* These helpers are `clocks` and `tween`.
+* You may access the helper to create a `Clock`/`TweenManager` pair.
 * This pair is automatically linked, so each clock has associated tweens,
 * and each tween manager runs on its own clock.
 * The clock can also run timer functions.
@@ -105,7 +11,7 @@
 * The helper runs as a state component to ensure that
 * tween managers are updated.
 *
-* By default, the helper creates &#x60;ui&#x60; and &#x60;world&#x60; pairs.
+* By default, the helper creates `ui` and `world` pairs.
 * These are sufficient for the vast majority of timing purposes.
 *
 * @module Kiwi
@@ -115,15 +21,15 @@
 */
 
 Kiwi.Plugins.StateTimeHelper = {
-	name: &quot;StateTimeHelper&quot;,
-	version: &quot;1.0.0&quot;,
-	minimumKiwiVersion: &quot;1.4.0&quot;,
+	name: "StateTimeHelper",
+	version: "1.0.1",
+	minimumKiwiVersion: "1.4.1",
 	pluginDependencies: []
 };
 Kiwi.PluginManager.register( Kiwi.Plugins.StateTimeHelper );
 
 Kiwi.Plugins.StateTimeHelper.create = function( game ) {
-	Kiwi.Log.log( &quot;StateTimeHelper created&quot; );
+	Kiwi.Log.log( "StateTimeHelper created" );
 };
 
 
@@ -139,43 +45,43 @@ Kiwi.Plugins.StateTimeHelper.Component = function( params ) {
 	* and serves as central control.
 	*
 	* This component will automatically register itself to the owner,
-	* and create &#x60;clocks&#x60; and &#x60;tweens&#x60; properties on the owner.
-	* You may create clocks and tween managers using &#x60;create&#x60;.
+	* and create `clocks` and `tweens` properties on the owner.
+	* You may create clocks and tween managers using `create`.
 	* If you do not specify keys, it will automatically create
-	* &#x60;ui&#x60; and &#x60;world&#x60; clocks/tween managers.
+	* `ui` and `world` clocks/tween managers.
 	*
 	* The component will automatically update tween managers.
 	*
 	* You may get, set, and run properties and functions on the entire
 	* list of clocks or tweens using functions. This may be useful for
 	* diagnostic purposes. Not all functions can be easily accessed
-	* in this way, but for some like &#x60;isPaused()&#x60; it is a convenient shortcut.
+	* in this way, but for some like `isPaused()` it is a convenient shortcut.
 	*
 	* @class Component
 	* @constructor
 	* @param params {object} Composite parameter object
 	*	@param params.owner {Kiwi.Entity} Owner of the helper, ideally a State
-	*	@param [params.keys=[&quot;ui&quot;,&quot;world&quot;]] {array} List of names of
-	*		&#x60;Clock&#x60;/&#x60;TweenManager&#x60; pairs to create
+	*	@param [params.keys=["ui","world"]] {array} List of names of
+	*		`Clock`/`TweenManager` pairs to create
 	*	@param [params.maxFrameDuration=100] {number} Maximum frame duration
 	*		for clocks
-	*	@param [params.state] {Kiwi.State} Alias for &#x60;owner&#x60;, as this is
+	*	@param [params.state] {Kiwi.State} Alias for `owner`, as this is
 	*		usually added to a state
 	* @return Kiwi.Plugins.StateTimeHelper.Component
 	*/
 
 	var i;
 
-	if ( params.state &amp;&amp; !params.owner ) {
+	if ( params.state && !params.owner ) {
 		params.owner = params.state;
 	}
 
-	Kiwi.Component.call( this, params.owner, &quot;StateTimeHelper&quot; );
+	Kiwi.Component.call( this, params.owner, "StateTimeHelper" );
 
 	params.owner.components.add( this );
 
 	/**
-	* Clock storage, mirrored on &#x60;owner&#x60;
+	* Clock storage, mirrored on `owner`
 	* @property clocks
 	* @type object
 	* @default {}
@@ -184,7 +90,7 @@ Kiwi.Plugins.StateTimeHelper.Component = function( params ) {
 	this.owner.clocks = this.clocks;
 
 	/**
-	* Tween storage, mirrored on &#x60;owner&#x60;
+	* Tween storage, mirrored on `owner`
 	* @property tweens
 	* @type object
 	* @default {}
@@ -194,7 +100,7 @@ Kiwi.Plugins.StateTimeHelper.Component = function( params ) {
 
 	// Create key pairs
 	if ( !params.keys ) {
-		params.keys = [ &quot;ui&quot;, &quot;world&quot; ];
+		params.keys = [ "ui", "world" ];
 	}
 	for ( i in params.keys ) {
 		this.create( params.keys[ i ] );
@@ -213,28 +119,28 @@ Kiwi.extend( Kiwi.Plugins.StateTimeHelper.Component, Kiwi.Component );
 Kiwi.Plugins.StateTimeHelper.Component.prototype.create = function( key ) {
 
 	/**
-	* Create a &#x60;Clock&#x60;/&#x60;TweenManager&#x60; pair.
+	* Create a `Clock`/`TweenManager` pair.
 	* Link and register them.
 	*
 	* @method create
-	* @param key {string} Access key for the pair on &#x60;clocks&#x60; and &#x60;tweens&#x60;.
+	* @param key {string} Access key for the pair on `clocks` and `tweens`.
 	*/
 
 	var clock, tween;
 
-	if ( typeof key !== &quot;string&quot; ) {
+	if ( typeof key !== "string" ) {
 		Kiwi.Log.error(
-			&quot;#StateTimeHelper&quot;,
-			&quot;could not create invalid key name&quot; );
+			"#StateTimeHelper",
+			"could not create invalid key name" );
 		return;
 	}
 
 	if ( this.clocks[ key ] || this.tweens[ key ] ) {
 		Kiwi.Log.error(
-			&quot;#StateTimeHelper&quot;,
-			&quot;could not create Clock/TweenManager with key&quot;,
+			"#StateTimeHelper",
+			"could not create Clock/TweenManager with key",
 			key,
-			&quot;as it already exists.&quot; );
+			"as it already exists." );
 		return;
 	}
 
@@ -306,7 +212,7 @@ Kiwi.Plugins.StateTimeHelper.Component.prototype.runOnAllClocks =
 		args = [],
 		returns = [];
 
-	for ( i = 1; i &lt; arguments.length; i++ ) {
+	for ( i = 1; i < arguments.length; i++ ) {
 		args.push( arguments[ i ] );
 	}
 
@@ -335,7 +241,7 @@ Kiwi.Plugins.StateTimeHelper.Component.prototype.runOnAllTweens =
 		args = [],
 		returns = [];
 
-	for ( i = 1; i &lt; arguments.length; i++ ) {
+	for ( i = 1; i < arguments.length; i++ ) {
 		args.push( arguments[ i ] );
 	}
 
@@ -387,7 +293,7 @@ Kiwi.Plugins.StateTimeHelper.Component.prototype.setOnAllTweens =
 Kiwi.Plugins.StateTimeHelper.Component.prototype.update = function() {
 
 	/**
-	* Call every frame. Override default &#x60;Component.update&#x60;.
+	* Call every frame. Override default `Component.update`.
 	* @method update
 	*/
 
@@ -403,12 +309,16 @@ Kiwi.Plugins.StateTimeHelper.Component.prototype.destroy = function() {
 
 	/**
 	* Clean up time components to avoid end-of-state errors.
+	*
+	* This method should be called automatically in KiwiJS versions 1.4.1
+	* and up.
+	*
 	* @method destroy
 	*/
 
 	var i, j;
 
-	this.runOnAllClocks( &quot;stop&quot; );
+	this.runOnAllClocks( "stop" );
 	for ( i in this.tweens ) {
 		this.tweens[ i ].removeAll();
 	}
@@ -416,34 +326,13 @@ Kiwi.Plugins.StateTimeHelper.Component.prototype.destroy = function() {
 	// Somewhat naughty clock removal.
 	// This violates privacy,
 	// but it also prevents accumulation of orphan clocks.
-	for ( i = this.clocks.length - 1; i &gt;= 0; i-- ) {
+	for ( i = this.game.time._clocks.length - 1; i >= 0; i-- ) {
 		for ( j in this.clocks ) {
 			if ( this.game.time._clocks[ i ] === this.clocks[ j ] ) {
 				this.game.time._clocks.splice( i, 1 );
-				break;
 			}
 		}
 	}
 
 	Kiwi.Component.prototype.destroy.call( this );
 };
-
-    </pre>
-</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="../assets/vendor/prettify/prettify-min.js"></script>
-<script>prettyPrint();</script>
-<script src="../assets/js/yui-prettify.js"></script>
-<script src="../assets/../api.js"></script>
-<script src="../assets/js/api-filter.js"></script>
-<script src="../assets/js/api-list.js"></script>
-<script src="../assets/js/api-search.js"></script>
-<script src="../assets/js/apidocs.js"></script>
-</body>
-</html>

@@ -1,11 +1,11 @@
 State Time Helper Plugin
 ========================
 
-	Version: 1.0.0
+	Version: 1.0.1
 	Type: Animation helper
 	Author: Benjamin D. Richards for Kiwi.js Team
 	Website: www.kiwijs.org
-	Kiwi.js Version Last Tested: 1.4.0
+	Kiwi.js Version Last Tested: 1.4.1
 
 # Description
 
@@ -16,6 +16,13 @@ State-based time functions are highly stable. If you create a time function, suc
 The helper can create several time systems in parallel. These allow you to decouple behaviours from a single control structure. For example, by default the helper creates a "ui" and a "world" time service. You could pause the "world" clock to quickly stop world objects moving, and still run the "ui" service to animate menu elements.
 
 # Versions
+
+## 1.0.1
+
+- Add MIT license
+- Fix bug that would not remove custom clocks when switching states
+- Increase minimum Kiwi version to 1.4.1
+- Clarify that `Component.destroy` is called automatically
 
 ## 1.0.0
 
@@ -29,6 +36,7 @@ Initial release
 	src/			Source files of plugin
 	.gitignore		Git ignore prevents upload of working files
 	gruntfile.js	Grunt tasks used to build plugin
+	license.txt		How you may use this plugin
 	package.json	Package data for Grunt
 	readme.md		This file
 

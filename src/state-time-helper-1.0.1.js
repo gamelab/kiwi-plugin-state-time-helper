@@ -22,8 +22,8 @@
 
 Kiwi.Plugins.StateTimeHelper = {
 	name: "StateTimeHelper",
-	version: "1.0.0",
-	minimumKiwiVersion: "1.4.0",
+	version: "1.0.1",
+	minimumKiwiVersion: "1.4.1",
 	pluginDependencies: []
 };
 Kiwi.PluginManager.register( Kiwi.Plugins.StateTimeHelper );
@@ -309,6 +309,10 @@ Kiwi.Plugins.StateTimeHelper.Component.prototype.destroy = function() {
 
 	/**
 	* Clean up time components to avoid end-of-state errors.
+	*
+	* This method should be called automatically in KiwiJS versions 1.4.1
+	* and up.
+	*
 	* @method destroy
 	*/
 
@@ -322,11 +326,10 @@ Kiwi.Plugins.StateTimeHelper.Component.prototype.destroy = function() {
 	// Somewhat naughty clock removal.
 	// This violates privacy,
 	// but it also prevents accumulation of orphan clocks.
-	for ( i = this.clocks.length - 1; i >= 0; i-- ) {
+	for ( i = this.game.time._clocks.length - 1; i >= 0; i-- ) {
 		for ( j in this.clocks ) {
 			if ( this.game.time._clocks[ i ] === this.clocks[ j ] ) {
 				this.game.time._clocks.splice( i, 1 );
-				break;
 			}
 		}
 	}

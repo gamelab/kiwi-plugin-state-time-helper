@@ -2,12 +2,12 @@
     "project": {
         "name": "state-time-helper",
         "description": "Add useful time managers to Kiwi.State.",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "url": "http://kiwijs.org/"
     },
     "files": {
-        "src/state-time-helper-1.0.0.js": {
-            "name": "src/state-time-helper-1.0.0.js",
+        "src/state-time-helper-1.0.1.js": {
+            "name": "src/state-time-helper-1.0.1.js",
             "modules": {
                 "Plugins": 1
             },
@@ -37,7 +37,7 @@
                 "Kiwi.Plugins": 1,
                 "Kiwi.Plugins.StateTimeHelper": 1
             },
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 43
         },
         "Plugins": {
@@ -55,7 +55,7 @@
             },
             "module": "Kiwi",
             "namespace": "",
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 43,
             "description": "State Time Helper\n\nThis helper adds a pair of linked managers to a `State`.\nThese helpers are `clocks` and `tween`.\nYou may access the helper to create a `Clock`/`TweenManager` pair.\nThis pair is automatically linked, so each clock has associated tweens,\nand each tween manager runs on its own clock.\nThe clock can also run timer functions.\n\nThe helper runs as a state component to ensure that\ntween managers are updated.\n\nBy default, the helper creates `ui` and `world` pairs.\nThese are sufficient for the vast majority of timing purposes."
         }
@@ -72,7 +72,7 @@
             "module": "Kiwi",
             "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.StateTimeHelper",
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 1,
             "description": "State Time Helper\n\nThis helper adds a pair of linked managers to a `State`.\nThese helpers are `clocks` and `tween`.\nYou may access the helper to create a `Clock`/`TweenManager` pair.\nThis pair is automatically linked, so each clock has associated tweens,\nand each tween manager runs on its own clock.\nThe clock can also run timer functions.\n\nThe helper runs as a state component to ensure that\ntween managers are updated.\n\nBy default, the helper creates `ui` and `world` pairs.\nThese are sufficient for the vast majority of timing purposes."
         },
@@ -87,7 +87,7 @@
             "module": "Kiwi",
             "submodule": "Plugins",
             "namespace": "Kiwi.Plugins.StateTimeHelper",
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 43,
             "description": "This component manages time helper functions\nand serves as central control.\n\nThis component will automatically register itself to the owner,\nand create `clocks` and `tweens` properties on the owner.\nYou may create clocks and tween managers using `create`.\nIf you do not specify keys, it will automatically create\n`ui` and `world` clocks/tween managers.\n\nThe component will automatically update tween managers.\n\nYou may get, set, and run properties and functions on the entire\nlist of clocks or tweens using functions. This may be useful for\ndiagnostic purposes. Not all functions can be easily accessed\nin this way, but for some like `isPaused()` it is a convenient shortcut.",
             "is_constructor": 1,
@@ -132,7 +132,7 @@
     },
     "classitems": [
         {
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 36,
             "class": "Kiwi.Plugins.StateTimeHelper",
             "module": "Kiwi",
@@ -140,7 +140,7 @@
             "namespace": "Kiwi.Plugins.StateTimeHelper"
         },
         {
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 83,
             "description": "Clock storage, mirrored on `owner`",
             "itemtype": "property",
@@ -153,7 +153,7 @@
             "namespace": "Kiwi.Plugins.StateTimeHelper"
         },
         {
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 92,
             "description": "Tween storage, mirrored on `owner`",
             "itemtype": "property",
@@ -166,7 +166,7 @@
             "namespace": "Kiwi.Plugins.StateTimeHelper"
         },
         {
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 121,
             "description": "Create a `Clock`/`TweenManager` pair.\nLink and register them.",
             "itemtype": "method",
@@ -184,7 +184,7 @@
             "namespace": "Kiwi.Plugins.StateTimeHelper"
         },
         {
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 160,
             "description": "Return a list of the property on all clocks.",
             "itemtype": "method",
@@ -205,7 +205,7 @@
             "namespace": "Kiwi.Plugins.StateTimeHelper"
         },
         {
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 181,
             "description": "Return a list of the property on all tween managers.",
             "itemtype": "method",
@@ -226,7 +226,7 @@
             "namespace": "Kiwi.Plugins.StateTimeHelper"
         },
         {
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 202,
             "description": "Execute the specified method on all clocks.\nAdditional parameters will be passed to the functions.\nThis returns a list of any return values.",
             "itemtype": "method",
@@ -248,7 +248,7 @@
             "namespace": "Kiwi.Plugins.StateTimeHelper"
         },
         {
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 231,
             "description": "Execute the specified method on all tween managers.\nAdditional parameters will be passed to the functions.\nThis returns a list of any return values.",
             "itemtype": "method",
@@ -270,7 +270,7 @@
             "namespace": "Kiwi.Plugins.StateTimeHelper"
         },
         {
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 260,
             "description": "Set the property on all clocks.",
             "itemtype": "method",
@@ -293,7 +293,7 @@
             "namespace": "Kiwi.Plugins.StateTimeHelper"
         },
         {
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 278,
             "description": "Set the property on all tween managers.",
             "itemtype": "method",
@@ -316,7 +316,7 @@
             "namespace": "Kiwi.Plugins.StateTimeHelper"
         },
         {
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 295,
             "description": "Call every frame. Override default `Component.update`.",
             "itemtype": "method",
@@ -327,9 +327,9 @@
             "namespace": "Kiwi.Plugins.StateTimeHelper"
         },
         {
-            "file": "src/state-time-helper-1.0.0.js",
+            "file": "src/state-time-helper-1.0.1.js",
             "line": 310,
-            "description": "Clean up time components to avoid end-of-state errors.",
+            "description": "Clean up time components to avoid end-of-state errors.\n\nThis method should be called automatically in KiwiJS versions 1.4.1\nand up.",
             "itemtype": "method",
             "name": "destroy",
             "class": "Kiwi.Plugins.StateTimeHelper.Component",
@@ -341,7 +341,7 @@
     "warnings": [
         {
             "message": "Missing item type",
-            "line": " src/state-time-helper-1.0.0.js:36"
+            "line": " src/state-time-helper-1.0.1.js:36"
         }
     ]
 }
